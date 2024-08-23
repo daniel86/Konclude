@@ -2652,10 +2652,10 @@ HEADERS += \
    ./Source\Utilities\Memory\CAllocationLimitationProvider.h \
    ./Source\Utilities\Memory\CMemoryPoolAllocationManager.h \
    ./Source\Utilities\Memory\CMemoryPoolContainer.h \
-
+
+
 SOURCES += \
    ./Source/CKoncludeInfo.cpp \
-   ./Source/mainLoader.cpp \
    ./Source/Concurrent/CWatchDogThreadData.cpp \
    ./Source/Concurrent/CWatchDogThread.cpp \
    ./Source/Concurrent/CWatchDog.cpp \

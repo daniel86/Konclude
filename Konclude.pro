@@ -8,7 +8,7 @@ QMAKE_EXTRA_TARGETS += gitbuild
 PRE_TARGETDEPS = gitbuild
 
 message("Preparing source code of Konclude.")
-TEMPLATE = app
+TEMPLATE = lib
 TARGET = Konclude
 DESTDIR = ./Release
 QT += xml network concurrent
@@ -28,11 +28,12 @@ RCC_DIR += ./GeneratedFiles
 #Include file(s)
 include(Konclude.pri)
 
-unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/librdf.a
-unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/libraptor2.a
-unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/librasqal.a
-unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/libxml2.a
-unix: LIBS += $$PWD/External/jemalloc/Linux/x64/lib/release/libjemalloc.a
+unix: LIBS += -lrdf -lraptor2 -lrasqal -lxml2
+#unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/librdf.a
+#unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/libraptor2.a
+#unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/librasqal.a
+#unix: LIBS += $$PWD/External/librdf/Linux/x64/lib/release/libxml2.a
+#unix: LIBS += $$PWD/External/jemalloc/Linux/x64/lib/release/libjemalloc.a
 unix: LIBS += -lz -lltdl -lgmp -ldl -L External/jemalloc/Linux/x64/lib/release/ -ljemalloc
 
 unix: INCLUDEPATH += $$PWD/External/librdf/Linux/x64/include
